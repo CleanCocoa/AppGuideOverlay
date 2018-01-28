@@ -10,7 +10,50 @@
 		500F5BC9201CBCA700B78822 /* AppGuideOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 500F5BC7201CBCA700B78822 /* AppGuideOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		500F5BD1201CBD4900B78822 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 500F5BCF201CBD4900B78822 /* README.md */; };
 		500F5BD2201CBD4900B78822 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 500F5BD0201CBD4900B78822 /* LICENSE */; };
+		500F5BDA201CBD7A00B78822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BD9201CBD7A00B78822 /* AppDelegate.swift */; };
+		500F5BDC201CBD7A00B78822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500F5BDB201CBD7A00B78822 /* Assets.xcassets */; };
+		500F5BDF201CBD7A00B78822 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 500F5BDD201CBD7A00B78822 /* MainMenu.xib */; };
+		500F5BE6201CBDA300B78822 /* OverlainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BE5201CBDA300B78822 /* OverlainWindow.swift */; };
+		500F5BE8201CBE2200B78822 /* AppGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BE7201CBE2200B78822 /* AppGuide.swift */; };
+		500F5BEA201CBF3400B78822 /* AppGuidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BE9201CBF3400B78822 /* AppGuidePresenter.swift */; };
+		500F5BEC201CBF6F00B78822 /* AppGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BEB201CBF6F00B78822 /* AppGuideViewController.swift */; };
+		500F5BEE201DD18C00B78822 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BED201DD18C00B78822 /* OverlayView.swift */; };
+		500F5BF0201DD1A900B78822 /* OverlayLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BEF201DD1A900B78822 /* OverlayLabelViewController.swift */; };
+		500F5BF2201DD1BE00B78822 /* OverlayLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BF1201DD1BE00B78822 /* OverlayLabelView.swift */; };
+		500F5BF4201DD1D600B78822 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BF3201DD1D600B78822 /* OverlayViewController.swift */; };
+		500F5BF6201DD27A00B78822 /* NSView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BF5201DD27A00B78822 /* NSView+constraints.swift */; };
+		500F5BF8201DD2A700B78822 /* NSTextField+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BF7201DD2A700B78822 /* NSTextField+Label.swift */; };
+		500F5BFE201DD3B500B78822 /* ValueAnimationLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BFA201DD3B500B78822 /* ValueAnimationLoop.swift */; };
+		500F5BFF201DD3B500B78822 /* SmoothAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BFB201DD3B500B78822 /* SmoothAnimation.swift */; };
+		500F5C01201DD3B500B78822 /* AnimationLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BFD201DD3B500B78822 /* AnimationLoop.swift */; };
+		500F5C03201DD4D000B78822 /* NSView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5C02201DD4D000B78822 /* NSView+constraints.swift */; };
+		500F5C04201DD5D700B78822 /* AppGuideOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */; };
+		500F5C05201DD5D700B78822 /* AppGuideOverlay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		500F5C06201DD5D700B78822 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 500F5BBB201CBCA700B78822 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 500F5BC3201CBCA700B78822;
+			remoteInfo = AppGuideOverlay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		500F5C08201DD5D700B78822 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				500F5C05201DD5D700B78822 /* AppGuideOverlay.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppGuideOverlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -18,6 +61,26 @@
 		500F5BC8201CBCA700B78822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		500F5BCF201CBD4900B78822 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		500F5BD0201CBD4900B78822 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		500F5BD7201CBD7A00B78822 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		500F5BD9201CBD7A00B78822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		500F5BDB201CBD7A00B78822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		500F5BDE201CBD7A00B78822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		500F5BE0201CBD7A00B78822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		500F5BE1201CBD7A00B78822 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
+		500F5BE5201CBDA300B78822 /* OverlainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlainWindow.swift; sourceTree = "<group>"; };
+		500F5BE7201CBE2200B78822 /* AppGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuide.swift; sourceTree = "<group>"; };
+		500F5BE9201CBF3400B78822 /* AppGuidePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuidePresenter.swift; sourceTree = "<group>"; };
+		500F5BEB201CBF6F00B78822 /* AppGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuideViewController.swift; sourceTree = "<group>"; };
+		500F5BED201DD18C00B78822 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		500F5BEF201DD1A900B78822 /* OverlayLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLabelViewController.swift; sourceTree = "<group>"; };
+		500F5BF1201DD1BE00B78822 /* OverlayLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLabelView.swift; sourceTree = "<group>"; };
+		500F5BF3201DD1D600B78822 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		500F5BF5201DD27A00B78822 /* NSView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+constraints.swift"; sourceTree = "<group>"; };
+		500F5BF7201DD2A700B78822 /* NSTextField+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Label.swift"; sourceTree = "<group>"; };
+		500F5BFA201DD3B500B78822 /* ValueAnimationLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueAnimationLoop.swift; sourceTree = "<group>"; };
+		500F5BFB201DD3B500B78822 /* SmoothAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothAnimation.swift; sourceTree = "<group>"; };
+		500F5BFD201DD3B500B78822 /* AnimationLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationLoop.swift; sourceTree = "<group>"; };
+		500F5C02201DD4D000B78822 /* NSView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSView+constraints.swift"; path = "AppGuideOverlay/NSView+constraints.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +88,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		500F5BD4201CBD7A00B78822 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				500F5C04201DD5D700B78822 /* AppGuideOverlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +108,7 @@
 				500F5BD0201CBD4900B78822 /* LICENSE */,
 				500F5BCF201CBD4900B78822 /* README.md */,
 				500F5BC6201CBCA700B78822 /* AppGuideOverlay */,
+				500F5BD8201CBD7A00B78822 /* Example */,
 				500F5BC5201CBCA700B78822 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */,
+				500F5BD7201CBD7A00B78822 /* Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,9 +126,43 @@
 			isa = PBXGroup;
 			children = (
 				500F5BC7201CBCA700B78822 /* AppGuideOverlay.h */,
+				500F5BE5201CBDA300B78822 /* OverlainWindow.swift */,
+				500F5BE7201CBE2200B78822 /* AppGuide.swift */,
+				500F5BE9201CBF3400B78822 /* AppGuidePresenter.swift */,
+				500F5BEB201CBF6F00B78822 /* AppGuideViewController.swift */,
+				500F5BF3201DD1D600B78822 /* OverlayViewController.swift */,
+				500F5BED201DD18C00B78822 /* OverlayView.swift */,
+				500F5BEF201DD1A900B78822 /* OverlayLabelViewController.swift */,
+				500F5BF1201DD1BE00B78822 /* OverlayLabelView.swift */,
+				500F5BF5201DD27A00B78822 /* NSView+constraints.swift */,
+				500F5BF7201DD2A700B78822 /* NSTextField+Label.swift */,
+				500F5BF9201DD3AB00B78822 /* LoopingAnimation */,
 				500F5BC8201CBCA700B78822 /* Info.plist */,
 			);
 			path = AppGuideOverlay;
+			sourceTree = "<group>";
+		};
+		500F5BD8201CBD7A00B78822 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				500F5BD9201CBD7A00B78822 /* AppDelegate.swift */,
+				500F5C02201DD4D000B78822 /* NSView+constraints.swift */,
+				500F5BDB201CBD7A00B78822 /* Assets.xcassets */,
+				500F5BDD201CBD7A00B78822 /* MainMenu.xib */,
+				500F5BE0201CBD7A00B78822 /* Info.plist */,
+				500F5BE1201CBD7A00B78822 /* Example.entitlements */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		500F5BF9201DD3AB00B78822 /* LoopingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				500F5BFD201DD3B500B78822 /* AnimationLoop.swift */,
+				500F5BFB201DD3B500B78822 /* SmoothAnimation.swift */,
+				500F5BFA201DD3B500B78822 /* ValueAnimationLoop.swift */,
+			);
+			path = LoopingAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,16 +197,41 @@
 			productReference = 500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		500F5BD6201CBD7A00B78822 /* Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 500F5BE2201CBD7A00B78822 /* Build configuration list for PBXNativeTarget "Example" */;
+			buildPhases = (
+				500F5BD3201CBD7A00B78822 /* Sources */,
+				500F5BD4201CBD7A00B78822 /* Frameworks */,
+				500F5BD5201CBD7A00B78822 /* Resources */,
+				500F5C08201DD5D700B78822 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				500F5C07201DD5D700B78822 /* PBXTargetDependency */,
+			);
+			name = Example;
+			productName = Example;
+			productReference = 500F5BD7201CBD7A00B78822 /* Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		500F5BBB201CBCA700B78822 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Christian Tietze";
 				TargetAttributes = {
 					500F5BC3201CBCA700B78822 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					500F5BD6201CBD7A00B78822 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -111,6 +243,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 500F5BBA201CBCA700B78822;
 			productRefGroup = 500F5BC5201CBCA700B78822 /* Products */;
@@ -118,6 +251,7 @@
 			projectRoot = "";
 			targets = (
 				500F5BC3201CBCA700B78822 /* AppGuideOverlay */,
+				500F5BD6201CBD7A00B78822 /* Example */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +266,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		500F5BD5201CBD7A00B78822 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				500F5BDC201CBD7A00B78822 /* Assets.xcassets in Resources */,
+				500F5BDF201CBD7A00B78822 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -139,10 +282,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500F5BE6201CBDA300B78822 /* OverlainWindow.swift in Sources */,
+				500F5BEC201CBF6F00B78822 /* AppGuideViewController.swift in Sources */,
+				500F5BF2201DD1BE00B78822 /* OverlayLabelView.swift in Sources */,
+				500F5BE8201CBE2200B78822 /* AppGuide.swift in Sources */,
+				500F5BEA201CBF3400B78822 /* AppGuidePresenter.swift in Sources */,
+				500F5C01201DD3B500B78822 /* AnimationLoop.swift in Sources */,
+				500F5BF8201DD2A700B78822 /* NSTextField+Label.swift in Sources */,
+				500F5BF0201DD1A900B78822 /* OverlayLabelViewController.swift in Sources */,
+				500F5BEE201DD18C00B78822 /* OverlayView.swift in Sources */,
+				500F5BF4201DD1D600B78822 /* OverlayViewController.swift in Sources */,
+				500F5BFE201DD3B500B78822 /* ValueAnimationLoop.swift in Sources */,
+				500F5BFF201DD3B500B78822 /* SmoothAnimation.swift in Sources */,
+				500F5BF6201DD27A00B78822 /* NSView+constraints.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		500F5BD3201CBD7A00B78822 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				500F5C03201DD4D000B78822 /* NSView+constraints.swift in Sources */,
+				500F5BDA201CBD7A00B78822 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		500F5C07201DD5D700B78822 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 500F5BC3201CBCA700B78822 /* AppGuideOverlay */;
+			targetProxy = 500F5C06201DD5D700B78822 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		500F5BDD201CBD7A00B78822 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				500F5BDE201CBD7A00B78822 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		500F5BCA201CBCA700B78822 /* Debug */ = {
@@ -260,6 +444,31 @@
 		500F5BCD201CBCA700B78822 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FRMDA3XRGC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = AppGuideOverlay/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.christiantietze.AppGuideOverlay;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		500F5BCE201CBCA700B78822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -277,26 +486,38 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 			};
-			name = Debug;
+			name = Release;
 		};
-		500F5BCE201CBCA700B78822 /* Release */ = {
+		500F5BE3201CBD7A00B78822 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = FRMDA3XRGC;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = AppGuideOverlay/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.christiantietze.AppGuideOverlay;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.christiantietze.AppGuideOverlay.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		500F5BE4201CBD7A00B78822 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FRMDA3XRGC;
+				INFOPLIST_FILE = Example/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.christiantietze.AppGuideOverlay.Example;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -318,6 +539,15 @@
 			buildConfigurations = (
 				500F5BCD201CBCA700B78822 /* Debug */,
 				500F5BCE201CBCA700B78822 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		500F5BE2201CBD7A00B78822 /* Build configuration list for PBXNativeTarget "Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				500F5BE3201CBD7A00B78822 /* Debug */,
+				500F5BE4201CBD7A00B78822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
