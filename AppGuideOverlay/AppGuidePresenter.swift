@@ -5,12 +5,6 @@ public protocol DisplaysAppGuide {
     func hide()
 }
 
-public protocol HandlesOverlayEvents: class {
-    func nextStep()
-    func previousStep()
-    func cancel()
-}
-
 public class AppGuidePresenter: HandlesOverlayEvents {
 
     public let appGuide: AppGuide
@@ -47,6 +41,7 @@ public class AppGuidePresenter: HandlesOverlayEvents {
 
     public func cancel() {
         view.hide()
+        stepIndex = 0
     }
 
     public func displayStep() {

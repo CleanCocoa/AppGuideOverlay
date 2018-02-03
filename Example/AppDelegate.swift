@@ -14,14 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var button1: NSButton!
     @IBOutlet weak var button2: NSButton!
 
-    var appGuidePresenter: AppGuidePresenter!
-    var appGuideViewController: AppGuideViewController!
+    var appGuideOverlay: AppGuideOverlay!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
-        self.appGuideViewController = AppGuideViewController()
-        window.contentView!.addSubview(appGuideViewController.view)
-        appGuideViewController.view.constrainToSuperviewBounds()
 
         let appGuide = AppGuide(steps: [
             .init(title: "Omnia Sol Termperat",
@@ -45,14 +40,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                   position: .below,
                   cutoutView: button2)
             ])
-        self.appGuidePresenter = AppGuidePresenter(
+
+        self.appGuideOverlay = AppGuideOverlay(
             appGuide: appGuide,
-            view: appGuideViewController)
-        appGuideViewController.eventHandler = appGuidePresenter
-        appGuidePresenter.start()
+            appGuideSuperview: window.contentView!)
+        appGuideOverlay.isFinishingAfterNext = false
+        appGuideOverlay.delegate = self
+        appGuideOverlay.start()
     }
 
     @IBAction func showOverlay(_ sender: Any?) {
-        appGuidePresenter.start()
+        appGuideOverlay.start()
+    }
+}
+
+extension AppDelegate: AppGuideOverlayDelegate {
+
+    func appGuideWillAppear() {
+
+    }
+
+    func appGuideDidFinish() {
+
+    }
+
+    func appGuideDidCancel() {
+
     }
 }

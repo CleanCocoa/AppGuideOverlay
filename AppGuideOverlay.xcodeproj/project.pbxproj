@@ -29,6 +29,7 @@
 		500F5C03201DD4D000B78822 /* NSView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5C02201DD4D000B78822 /* NSView+constraints.swift */; };
 		500F5C04201DD5D700B78822 /* AppGuideOverlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */; };
 		500F5C05201DD5D700B78822 /* AppGuideOverlay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		50F54CC12025C0EF00C419E4 /* AppGuideOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F54CC02025C0EF00C419E4 /* AppGuideOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		500F5BFB201DD3B500B78822 /* SmoothAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmoothAnimation.swift; sourceTree = "<group>"; };
 		500F5BFD201DD3B500B78822 /* AnimationLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationLoop.swift; sourceTree = "<group>"; };
 		500F5C02201DD4D000B78822 /* NSView+constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSView+constraints.swift"; path = "AppGuideOverlay/NSView+constraints.swift"; sourceTree = SOURCE_ROOT; };
+		50F54CC02025C0EF00C419E4 /* AppGuideOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuideOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				500F5BC7201CBCA700B78822 /* AppGuideOverlay.h */,
 				500F5BE5201CBDA300B78822 /* OverlainWindow.swift */,
+				50F54CC02025C0EF00C419E4 /* AppGuideOverlay.swift */,
 				500F5BE7201CBE2200B78822 /* AppGuide.swift */,
 				500F5BE9201CBF3400B78822 /* AppGuidePresenter.swift */,
 				500F5BEB201CBF6F00B78822 /* AppGuideViewController.swift */,
@@ -287,6 +290,7 @@
 				500F5BF2201DD1BE00B78822 /* OverlayLabelView.swift in Sources */,
 				500F5BE8201CBE2200B78822 /* AppGuide.swift in Sources */,
 				500F5BEA201CBF3400B78822 /* AppGuidePresenter.swift in Sources */,
+				50F54CC12025C0EF00C419E4 /* AppGuideOverlay.swift in Sources */,
 				500F5C01201DD3B500B78822 /* AnimationLoop.swift in Sources */,
 				500F5BF8201DD2A700B78822 /* NSTextField+Label.swift in Sources */,
 				500F5BF0201DD1A900B78822 /* OverlayLabelViewController.swift in Sources */,
