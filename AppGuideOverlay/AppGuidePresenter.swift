@@ -22,20 +22,25 @@ public class AppGuidePresenter: HandlesOverlayEvents {
     }
 
     private var stepIndex = 0
+    public var hasNextStep: Bool { return stepIndex < (appGuide.count - 1) }
+    public var hasPreviousStep: Bool { return stepIndex > 0 }
+
+    public var currentStep: AppGuide.Step { return appGuide[stepIndex] }
 
     public func start() {
         stepIndex = 0
         displayStep()
     }
 
+
     public func nextStep() {
-        guard stepIndex < (appGuide.steps.count - 1) else { return }
+        guard hasNextStep else { return }
         stepIndex += 1
         displayStep()
     }
 
     public func previousStep() {
-        guard stepIndex > 0 else { return }
+        guard hasPreviousStep else { return }
         stepIndex -= 1
         displayStep()
     }
@@ -46,7 +51,6 @@ public class AppGuidePresenter: HandlesOverlayEvents {
 
     public func displayStep() {
         precondition(appGuide.steps.indices.contains(stepIndex))
-        let step = appGuide.steps[stepIndex]
-        view.display(appGuideStep: step)
+        view.display(appGuideStep: currentStep)
     }
 }

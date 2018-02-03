@@ -5,6 +5,12 @@ import AppKit
 public struct AppGuide {
     public let steps: [Step]
 
+    public subscript (_ index: Int) -> Step {
+        return steps[index]
+    }
+
+    public var count: Int { return steps.count }
+
     public init(steps: [Step]) {
         self.steps = steps
     }
