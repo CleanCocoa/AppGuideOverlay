@@ -7,8 +7,8 @@ open class OverlayLabelView: NSView {
     open let titleLabel: NSTextField
     open let detailLabel: NSTextField
 
-    open let previousStepButton: NSButton
-    open let nextStepButton: NSButton
+    open let previousStepButton: OverlayButton
+    open let nextStepButton: OverlayButton
 
     public override init(frame frameRect: NSRect) {
 
@@ -54,7 +54,7 @@ open class OverlayLabelView: NSView {
         return detailLabel
     }
 
-    private static func newButton(direction: OverlayButton.Direction) -> OverlayButton {
+    private static func newButton(direction: OverlayButton.Action) -> OverlayButton {
 
         let button = OverlayButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -118,44 +118,53 @@ open class OverlayLabelView: NSView {
         nextStepButton.action = isLastStep
             ? self.finishAction
             : self.nextAction
+        nextStepButton.changeNextImage(isLastStep: isLastStep)
     }
 }
 
-internal class OverlayButton: NSButton {
+open class OverlayButton: NSButton {
 
-    enum Direction {
-        case previous, next
+    public enum Action {
+        case previous, next, finish
 
-        var imageName: NSImage.Name {
+        public var imageName: NSImage.Name {
             switch self {
             case .previous: return .init(rawValue: "button-prev")
             case .next: return .init(rawValue: "button-next")
+            case .finish: return .init(rawValue: "button-finish")
             }
         }
 
-        var image: NSImage? {
+        public var image: NSImage? {
             return Bundle(for: OverlayButton.self).image(forResource: imageName)
         }
 
-        var imagePosition: NSControl.ImagePosition {
+        public var imagePosition: NSControl.ImagePosition {
             switch self {
             case .previous: return .imageLeft
-            case .next: return .imageRight
+            case .next, .finish: return .imageRight
             }
         }
 
-        var title: String {
+        public var title: String {
             switch self {
             case .previous: return OverlayButtonLabels.previous
             case .next: return OverlayButtonLabels.next
+            case .finish: return OverlayButtonLabels.finish
             }
         }
 
-        func configure(button: NSButton) {
+        public func configure(button: NSButton) {
             button.title = self.title
             button.image = self.image
             button.imagePosition = self.imagePosition
             button.imageScaling = .scaleProportionallyDown
+            button.sizeToFit()
         }
+    }
+
+    internal func changeNextImage(isLastStep: Bool) {
+        let action: Action = isLastStep ? .finish : .next
+        self.image = action.image
     }
 }
