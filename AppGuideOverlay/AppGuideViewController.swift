@@ -9,8 +9,8 @@ open class AppGuideViewController: NSViewController, DisplaysAppGuide {
         set { overlayViewController.eventHandler = newValue }
     }
 
-    open var overlayViewController: OverlayViewController!
-    open var overlayLabelViewController: OverlayLabelViewController!
+    open lazy var overlayViewController: OverlayViewController = OverlayViewController()
+    open lazy var overlayLabelViewController: OverlayLabelViewController = OverlayLabelViewController()
 
     /// Spacing between the cutout view and its overlay labels.
     open var overlayLabelSpacing: CGFloat = 12
@@ -22,16 +22,11 @@ open class AppGuideViewController: NSViewController, DisplaysAppGuide {
 
     open override func viewDidLoad() {
 
-        let overlayViewController = OverlayViewController()
         self.view.addSubview(overlayViewController.overlayView)
         overlayViewController.overlayView.constrainToSuperviewBounds()
 
-        let overlayLabelViewController = OverlayLabelViewController()
         overlayViewController.overlayView.addSubview(overlayLabelViewController.overlayLabelView)
         addLabelConstraints(overlayLabelView: overlayLabelViewController.overlayLabelView)
-
-        self.overlayViewController = overlayViewController
-        self.overlayLabelViewController = overlayLabelViewController
     }
 
     /// Ensure the constrainingView always fits the overlayLabelView.
