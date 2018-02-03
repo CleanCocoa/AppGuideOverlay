@@ -64,23 +64,23 @@ open class OverlayLabelViewController: NSViewController {
         let newConstraints: [NSLayoutConstraint] = {
             switch position {
             case .below: return [
-                NSLayoutConstraint(item: overlayLabelView, attribute: .leading, relatedBy: .equal, toItem: referenceView, attribute: .leading, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: overlayLabelView, attribute: .leading, relatedBy: .equal, toItem: referenceView, attribute: .leading, multiplier: 1, constant: 0).prioritized(.windowSizeStayPut),
                 NSLayoutConstraint(item: overlayLabelView, attribute: .top, relatedBy: .equal, toItem: referenceView, attribute: .bottom, multiplier: 1, constant: spacing)
                 ]
 
             case .above: return [
-                NSLayoutConstraint(item: overlayLabelView, attribute: .leading, relatedBy: .equal, toItem: referenceView, attribute: .leading, multiplier: 1, constant: 0),
+                NSLayoutConstraint(item: overlayLabelView, attribute: .leading, relatedBy: .equal, toItem: referenceView, attribute: .leading, multiplier: 1, constant: 0).prioritized(.windowSizeStayPut),
                 NSLayoutConstraint(item: referenceView, attribute: .top, relatedBy: .equal, toItem: overlayLabelView, attribute: .bottom, multiplier: 1, constant: spacing)
                 ]
 
             case .left: return [
                 NSLayoutConstraint(item: referenceView, attribute: .leading, relatedBy: .equal, toItem: overlayLabelView, attribute: .trailing, multiplier: 1, constant: spacing),
-                NSLayoutConstraint(item: overlayLabelView, attribute: .top, relatedBy: .equal, toItem: referenceView, attribute: .top, multiplier: 1, constant: 0)
+                NSLayoutConstraint(item: overlayLabelView, attribute: .top, relatedBy: .equal, toItem: referenceView, attribute: .top, multiplier: 1, constant: 0).prioritized(.windowSizeStayPut)
                 ]
 
             case .right: return [
                 NSLayoutConstraint(item: overlayLabelView, attribute: .leading, relatedBy: .equal, toItem: referenceView, attribute: .trailing, multiplier: 1, constant: spacing),
-                NSLayoutConstraint(item: overlayLabelView, attribute: .top, relatedBy: .equal, toItem: referenceView, attribute: .top, multiplier: 1, constant: 0)
+                NSLayoutConstraint(item: overlayLabelView, attribute: .top, relatedBy: .equal, toItem: referenceView, attribute: .top, multiplier: 1, constant: 0).prioritized(.windowSizeStayPut)
                 ]
             }
         }()
@@ -92,5 +92,12 @@ open class OverlayLabelViewController: NSViewController {
 
     open func hide() {
         self.overlayLabelView.isHidden = true
+    }
+}
+
+extension NSLayoutConstraint {
+    func prioritized(_ priority: NSLayoutConstraint.Priority) -> NSLayoutConstraint {
+        self.priority = priority
+        return self
     }
 }

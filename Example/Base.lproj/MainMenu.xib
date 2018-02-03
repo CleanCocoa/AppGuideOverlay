@@ -689,7 +689,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -706,7 +706,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kol-wX-54D">
-                        <rect key="frame" x="103" y="88" width="81" height="32"/>
+                        <rect key="frame" x="-6" y="88" width="81" height="32"/>
                         <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hpU-AL-DI6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -776,7 +776,7 @@
                     <constraint firstItem="86v-kQ-Ep6" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="72" id="g9P-7o-7ND"/>
                     <constraint firstItem="gJS-tI-mCA" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="37" id="mPJ-Ur-988"/>
                     <constraint firstItem="m36-kI-AxM" firstAttribute="centerY" secondItem="EiT-Mj-1SZ" secondAttribute="centerY" id="mpy-Nt-1Z9"/>
-                    <constraint firstItem="kol-wX-54D" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="109" id="reV-eK-ptj"/>
+                    <constraint firstItem="kol-wX-54D" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="reV-eK-ptj"/>
                     <constraint firstItem="nzF-rX-Lb8" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="279" id="why-EO-CWf"/>
                     <constraint firstItem="m36-kI-AxM" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="xUR-VB-tgw"/>
                     <constraint firstItem="kol-wX-54D" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="244" id="yns-wK-55y"/>
