@@ -81,7 +81,7 @@ open class OverlayLabelView: NSView {
             visualFormats: [
                 "H:|[title]|",
                 "H:|[detail]|",
-                "H:|[prev]-(12)-[next]",
+                "H:|[prev]-(12)-[next]-(>=0)-|",
 
                 "V:|[title]-(8)-[detail]-(12)-[prev]|"
             ],
