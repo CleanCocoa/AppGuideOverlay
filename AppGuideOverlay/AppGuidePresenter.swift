@@ -1,10 +1,7 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
-public protocol DisplaysAppGuide {
-    func display(appGuideStep: AppGuide.Step)
-    func hide()
-}
-
+/// Can be used as `HandlesOverlayEvents` controller out of the box to control
+/// the transition and view/hide its `view`.
 public class AppGuidePresenter: HandlesOverlayEvents {
 
     public let appGuide: AppGuide
@@ -39,6 +36,11 @@ public class AppGuidePresenter: HandlesOverlayEvents {
         displayStep()
     }
 
+    public func finish() {
+        view.hide()
+        stepIndex = 0
+    }
+
     public func cancel() {
         view.hide()
         stepIndex = 0
@@ -46,6 +48,23 @@ public class AppGuidePresenter: HandlesOverlayEvents {
 
     public func displayStep() {
         precondition(appGuide.steps.indices.contains(stepIndex))
-        view.display(appGuideStep: currentStep)
+        let viewModel = currentAppGuideStepViewModel()
+        view.display(appGuideStep: viewModel)
+    }
+
+    private func currentAppGuideStepViewModel() -> AppGuideStepViewModel {
+
+        let base = currentStep
+
+        let isFirstStep = !hasPreviousStep
+        let isLastStep = !hasNextStep
+
+        return AppGuideStepViewModel(
+            title: base.title,
+            detail: base.detail,
+            isFirstStep: isFirstStep,
+            isLastStep: isLastStep,
+            position: base.position,
+            cutoutView: base.cutoutView)
     }
 }

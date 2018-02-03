@@ -18,10 +18,13 @@ open class OverlayViewController: NSViewController {
         self.overlayView = overlayView
     }
 
-    open func display(appGuideStep: AppGuide.Step) {
+    private var appGuideStepIsLastInGuide = false
+
+    open func display(appGuideStep: AppGuideStepViewModel) {
 
         overlayView.isHidden = false
         overlayView.display(appGuideStep: appGuideStep)
+        appGuideStepIsLastInGuide = appGuideStep.isLastStep
 
         guard let overlainWindow = overlayView.window as? OverlainWindow else { return }
         overlainWindow.isDisplayingOverlay = true
@@ -40,12 +43,31 @@ open class OverlayViewController: NSViewController {
 
     // MARK: Events
 
+    /// Responder chain callback from the "continue" button.
+    @IBAction func nextStep(_ sender: Any?) {
+        nextStep()
+    }
+
     func nextStep() {
         eventHandler?.nextStep()
     }
 
+    /// Responder chain callback from the "previous" button.
+    @IBAction func previousStep(_ sender: Any?) {
+        previousStep()
+    }
+
     func previousStep() {
         eventHandler?.previousStep()
+    }
+
+    /// Responder chain callback from the "continue" button, now used as "complete".
+    @IBAction func finishGuide(_ sender: Any?) {
+        finish()
+    }
+
+    func finish() {
+        eventHandler?.finish()
     }
 
     func cancel() {
@@ -67,10 +89,18 @@ open class OverlayViewController: NSViewController {
     }
 
     open override func insertNewline(_ sender: Any?) {
-        nextStep()
+        continueOrFinish()
     }
 
     open override func insertNewlineIgnoringFieldEditor(_ sender: Any?) {
-        nextStep()
+        continueOrFinish()
+    }
+
+    private func continueOrFinish() {
+        if appGuideStepIsLastInGuide {
+            finish()
+        } else {
+            nextStep()
+        }
     }
 }

@@ -17,19 +17,28 @@ open class OverlayLabelViewController: NSViewController {
 
         let overlayLabelView = OverlayLabelView()
         overlayLabelView.translatesAutoresizingMaskIntoConstraints = false
+
+        // Pass next/prev actions up the responder chain
+        overlayLabelView.target = nil
+        overlayLabelView.nextAction = #selector(OverlayViewController.nextStep(_:))
+        overlayLabelView.previousAction = #selector(OverlayViewController.previousStep(_:))
+        overlayLabelView.finishAction = #selector(OverlayViewController.finishGuide(_:))
+
         self.view = overlayLabelView
     }
 
-    open private(set) var overlayStep: AppGuide.Step?
+    open private(set) var appGuideStepViewModel: AppGuideStepViewModel?
 
-    open func display(appGuideStep: AppGuide.Step, spacing: CGFloat) {
+    open func display(appGuideStep: AppGuideStepViewModel, spacing: CGFloat) {
 
         self.overlayLabelView.isHidden = false
-        self.overlayStep = appGuideStep
+        self.appGuideStepViewModel = appGuideStep
 
         // Update texts first to calculate the view size properly
         updateLabels(title: appGuideStep.title,
                      detail: appGuideStep.detail)
+        updateButtons(isFirstStep: appGuideStep.isFirstStep,
+                      isLastStep: appGuideStep.isLastStep)
         replaceActiveConstraints(referenceView: appGuideStep.cutoutView,
                                  position: appGuideStep.position,
                                  spacing: spacing)
@@ -38,6 +47,11 @@ open class OverlayLabelViewController: NSViewController {
     private func updateLabels(title: String, detail: String) {
 
         overlayLabelView.changeText(title: title, detail: detail)
+    }
+
+    private func updateButtons(isFirstStep: Bool, isLastStep: Bool) {
+
+        overlayLabelView.changeButtons(isFirstStep: isFirstStep, isLastStep: isLastStep)
     }
 
     private func replaceActiveConstraints(

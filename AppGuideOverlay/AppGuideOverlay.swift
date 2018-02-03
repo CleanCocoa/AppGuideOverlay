@@ -16,6 +16,7 @@ public protocol AppGuideOverlayDelegate: class {
 public protocol HandlesOverlayEvents: class {
     func nextStep()
     func previousStep()
+    func finish()
     func cancel()
 }
 
@@ -84,7 +85,6 @@ extension AppGuideOverlay: HandlesOverlayEvents {
     }
 
     open func nextStep() {
-
         if  isFinishingAfterNext,
             !appGuidePresenter.hasNextStep {
             finish()
@@ -99,20 +99,18 @@ extension AppGuideOverlay: HandlesOverlayEvents {
     }
 
     open func cancel() {
-
         stop()
         delegate?.appGuideDidCancel()
     }
 
-    private func stop() {
-
-        appGuidePresenter.cancel()
-        removeAppGuideFromSuperview()
-    }
-
     open func finish() {
-
         stop()
         delegate?.appGuideDidFinish()
+    }
+
+    private func stop() {
+        
+        appGuidePresenter.cancel()
+        removeAppGuideFromSuperview()
     }
 }

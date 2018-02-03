@@ -38,7 +38,7 @@ open class AppGuideViewController: NSViewController, DisplaysAppGuide {
         constrainingView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-(>=20)-[labels]-(>=20)-|", options: [], metrics: nil, views: views))
     }
 
-    open func display(appGuideStep: AppGuide.Step) {
+    open func display(appGuideStep: AppGuideStepViewModel) {
 
         overlayViewController.display(
             appGuideStep: appGuideStep)

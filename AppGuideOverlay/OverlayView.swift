@@ -22,25 +22,25 @@ open class OverlayView: NSView, OverlayPart {
     }
 
     open var overlayColor = NSColor(white: 0, alpha: 0.4)
-    private(set) var appGuideStep: AppGuide.Step? {
+    private(set) var appGuideStepViewModel: AppGuideStepViewModel? {
         didSet {
-            self.isHidden = (appGuideStep == nil)
+            self.isHidden = (appGuideStepViewModel == nil)
             self.updateCutout()
         }
     }
 
-    open func display(appGuideStep: AppGuide.Step) {
+    open func display(appGuideStep: AppGuideStepViewModel) {
 
-        self.appGuideStep = appGuideStep
+        self.appGuideStepViewModel = appGuideStep
     }
 
     open func hideOverlayStep() {
 
-        self.appGuideStep = nil
+        self.appGuideStepViewModel = nil
     }
 
     private func animateCutoutBreathing() {
-        guard appGuideStep != nil else { return }
+        guard appGuideStepViewModel != nil else { return }
         guard !cutoutBreathingLoop.isAnimating else { return }
         cutoutBreathingLoop.start()
     }
@@ -68,12 +68,11 @@ open class OverlayView: NSView, OverlayPart {
 
         defer { self.needsDisplay = true }
 
-        guard let overlayStep = appGuideStep else {
+        guard let cutoutView = appGuideStepViewModel?.cutoutView else {
             cutoutPath = nil
             return
         }
 
-        let cutoutView = overlayStep.cutoutView
         let referenceViewRect = cutoutView.superview!.convert(cutoutView.frame, to: self)
         let innerSpacing: CGFloat = 2
 
