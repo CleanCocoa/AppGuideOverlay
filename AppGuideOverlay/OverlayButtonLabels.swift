@@ -1,6 +1,8 @@
 //  Copyright © 2018 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
+/// Default button labels, loaded as localized strings. Can be overridden.
 public struct OverlayButtonLabels {
+    /// Name of the localization table file.    
     public static let tableName = "AppGuideOverlay"
 
     /// `AppGuideOverlay.Previous` in `AppGuideOverlay.strings`

@@ -27,6 +27,9 @@ public protocol HandlesOverlayEvents: class {
 ///
 /// Puts the app gudie overlay views into the view hierarchy on `start` and
 /// removes them when finished to clear the Auto Layout constraints.
+///
+/// - React to events implementing `AppGuideOverlayDelegate`.
+/// - Change button labels using `OverlayButtonLabels`.
 open class AppGuideOverlay {
 
     open weak var delegate: AppGuideOverlayDelegate?

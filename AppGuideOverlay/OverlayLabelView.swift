@@ -14,8 +14,8 @@ open class OverlayLabelView: NSView {
 
         self.titleLabel = OverlayLabelView.newTitleLabel()
         self.detailLabel = OverlayLabelView.newDetailLabel()
-        self.previousStepButton = OverlayLabelView.newButton(title: OverlayButtonLabels.previous)
-        self.nextStepButton = OverlayLabelView.newButton(title: OverlayButtonLabels.next)
+        self.previousStepButton = OverlayLabelView.newButton(direction: .previous)
+        self.nextStepButton = OverlayLabelView.newButton(direction: .next)
 
         super.init(frame: frameRect)
 
@@ -26,8 +26,8 @@ open class OverlayLabelView: NSView {
 
         self.titleLabel = OverlayLabelView.newTitleLabel()
         self.detailLabel = OverlayLabelView.newDetailLabel()
-        self.previousStepButton = OverlayLabelView.newButton(title: OverlayButtonLabels.previous)
-        self.nextStepButton = OverlayLabelView.newButton(title: OverlayButtonLabels.next)
+        self.previousStepButton = OverlayLabelView.newButton(direction: .previous)
+        self.nextStepButton = OverlayLabelView.newButton(direction: .next)
 
         super.init(coder: decoder)
 
@@ -54,12 +54,14 @@ open class OverlayLabelView: NSView {
         return detailLabel
     }
 
-    private static func newButton(title: String) -> NSButton {
+    private static func newButton(direction: OverlayButton.Direction) -> OverlayButton {
 
-        let button = NSButton()
+        let button = OverlayButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.bezelStyle = .recessed
-        button.title = title
+
+        direction.configure(button: button)
+
         return button
     }
 
@@ -116,5 +118,44 @@ open class OverlayLabelView: NSView {
         nextStepButton.action = isLastStep
             ? self.finishAction
             : self.nextAction
+    }
+}
+
+internal class OverlayButton: NSButton {
+
+    enum Direction {
+        case previous, next
+
+        var imageName: NSImage.Name {
+            switch self {
+            case .previous: return .init(rawValue: "button-prev")
+            case .next: return .init(rawValue: "button-next")
+            }
+        }
+
+        var image: NSImage? {
+            return Bundle(for: OverlayButton.self).image(forResource: imageName)
+        }
+
+        var imagePosition: NSControl.ImagePosition {
+            switch self {
+            case .previous: return .imageLeft
+            case .next: return .imageRight
+            }
+        }
+
+        var title: String {
+            switch self {
+            case .previous: return OverlayButtonLabels.previous
+            case .next: return OverlayButtonLabels.next
+            }
+        }
+
+        func configure(button: NSButton) {
+            button.title = self.title
+            button.image = self.image
+            button.imagePosition = self.imagePosition
+            button.imageScaling = .scaleProportionallyDown
+        }
     }
 }
