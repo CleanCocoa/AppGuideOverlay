@@ -44,6 +44,11 @@ open class AppGuideOverlay {
         set { appGuideView.wantsLayer = newValue }
     }
 
+    open var overlayColor: NSColor {
+        get { return appGuideViewController.overlayColor }
+        set { appGuideViewController.overlayColor = newValue }
+    }
+
     open let appGuidePresenter: AppGuidePresenter
 
     open var appGuide: AppGuide { return appGuidePresenter.appGuide }

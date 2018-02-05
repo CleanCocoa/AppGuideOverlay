@@ -10,6 +10,12 @@ open class AppGuideViewController: NSViewController, DisplaysAppGuide {
     }
 
     open lazy var overlayViewController: OverlayViewController = OverlayViewController()
+
+    open var overlayColor: NSColor {
+        get { return overlayViewController.overlayColor }
+        set { overlayViewController.overlayColor = newValue }
+    }
+
     open lazy var overlayLabelViewController: OverlayLabelViewController = OverlayLabelViewController()
 
     /// Spacing between the cutout view and its overlay labels.

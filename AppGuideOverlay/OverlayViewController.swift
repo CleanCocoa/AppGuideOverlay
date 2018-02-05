@@ -11,6 +11,11 @@ open class OverlayViewController: NSViewController {
         set { self.view = newValue }
     }
 
+    open var overlayColor: NSColor {
+        get { return overlayView.overlayColor }
+        set { overlayView.overlayColor = newValue }
+    }
+
     open override func loadView() {
 
         let overlayView = OverlayView()
