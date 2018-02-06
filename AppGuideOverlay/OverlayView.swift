@@ -127,6 +127,14 @@ open class OverlayView: NSView, OverlayPart {
     open override func mouseDown(with event: NSEvent) { }
 
     open override func keyDown(with event: NSEvent) {
+
+        // Forwards events related to NSButton being key view up to the window
+        if event.keyCode == 48 // Tab (switch key views)
+            || event.keyCode == 49 { // Space
+            super.keyDown(with: event)
+            return
+        }
+
         self.interpretKeyEvents([event])
     }
 }
