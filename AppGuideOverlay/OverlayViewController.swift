@@ -33,7 +33,6 @@ open class OverlayViewController: NSViewController {
 
         guard let overlainWindow = overlayView.window as? OverlainWindow else { return }
         overlainWindow.isDisplayingOverlay = true
-        overlainWindow.makeFirstResponder(overlayView)
     }
 
     open func hide() {

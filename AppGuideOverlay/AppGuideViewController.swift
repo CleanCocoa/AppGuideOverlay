@@ -54,6 +54,18 @@ open class AppGuideViewController: NSViewController, DisplaysAppGuide {
 
         // `layoutSubtreeIfNeeded()` didn't force the frame to change before the cutout would be drawn at the wrong coordinates, but `layout()` does.
         overlayViewController.overlayView.layout()
+
+        ensureOverlayPartIsFirstResponder()
+    }
+
+    /// Retain the first responder when it's a `OverlayPart` or change it to the "next" button.
+    private func ensureOverlayPartIsFirstResponder() {
+
+        guard let window = self.view.window else { return }
+
+        if !(window.firstResponder is OverlayPart) {
+            window.makeFirstResponder(overlayLabelViewController.overlayLabelView.nextStepButton)
+        }
     }
 
     open func hide() {

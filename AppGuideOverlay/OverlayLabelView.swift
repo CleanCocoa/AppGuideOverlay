@@ -20,6 +20,7 @@ open class OverlayLabelView: NSView {
         super.init(frame: frameRect)
 
         layoutLabels()
+        setupKeyViewLoop()
     }
 
     public required init?(coder decoder: NSCoder) {
@@ -32,6 +33,7 @@ open class OverlayLabelView: NSView {
         super.init(coder: decoder)
 
         layoutLabels()
+        setupKeyViewLoop()
     }
 
     private static func newTitleLabel() -> NSTextField {
@@ -94,6 +96,12 @@ open class OverlayLabelView: NSView {
         self.addConstraints([NSLayoutConstraint(item: nextStepButton, attribute: .firstBaseline, relatedBy: .equal, toItem: previousStepButton, attribute: .firstBaseline, multiplier: 1, constant: 0)])
     }
 
+    private func setupKeyViewLoop() {
+
+        previousStepButton.nextKeyView = nextStepButton
+        nextStepButton.nextKeyView = previousStepButton
+    }
+
     open func changeText(title: String, detail: String) {
 
         titleLabel.stringValue = title
@@ -122,7 +130,7 @@ open class OverlayLabelView: NSView {
     }
 }
 
-open class OverlayButton: NSButton {
+open class OverlayButton: NSButton, OverlayPart {
 
     public enum Action {
         case previous, next, finish
