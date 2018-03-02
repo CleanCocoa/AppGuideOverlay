@@ -137,9 +137,9 @@ open class OverlayButton: NSButton, OverlayPart {
 
         public var imageName: NSImage.Name {
             switch self {
-            case .previous: return .init(rawValue: "button-prev")
-            case .next: return .init(rawValue: "button-next")
-            case .finish: return .init(rawValue: "button-finish")
+            case .previous: return .init(rawValue: "prevTemplate.pdf")
+            case .next: return .init(rawValue: "nextTemplate.pdf")
+            case .finish: return .init(rawValue: "finishTemplate.pdf")
             }
         }
 
