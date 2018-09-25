@@ -4,11 +4,11 @@ import AppKit
 
 open class OverlayLabelView: NSView {
 
-    open let titleLabel: NSTextField
-    open let detailLabel: NSTextField
+    public let titleLabel: NSTextField
+    public let detailLabel: NSTextField
 
-    open let previousStepButton: OverlayButton
-    open let nextStepButton: OverlayButton
+    public let previousStepButton: OverlayButton
+    public let nextStepButton: OverlayButton
 
     public override init(frame frameRect: NSRect) {
 
@@ -137,9 +137,9 @@ open class OverlayButton: NSButton, OverlayPart {
 
         public var imageName: NSImage.Name {
             switch self {
-            case .previous: return .init(rawValue: "prevTemplate.pdf")
-            case .next: return .init(rawValue: "nextTemplate.pdf")
-            case .finish: return .init(rawValue: "finishTemplate.pdf")
+            case .previous: return "prevTemplate.pdf"
+            case .next: return "nextTemplate.pdf"
+            case .finish: return "finishTemplate.pdf"
             }
         }
 

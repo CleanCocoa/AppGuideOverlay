@@ -34,7 +34,7 @@ open class AppGuideOverlay {
 
     open weak var delegate: AppGuideOverlayDelegate?
 
-    open let appGuideViewController: AppGuideViewController
+    public let appGuideViewController: AppGuideViewController
 
     open var appGuideView: NSView { return appGuideViewController.view }
 
@@ -49,11 +49,11 @@ open class AppGuideOverlay {
         set { appGuideViewController.overlayColor = newValue }
     }
 
-    open let appGuidePresenter: AppGuidePresenter
+    public let appGuidePresenter: AppGuidePresenter
 
     open var appGuide: AppGuide { return appGuidePresenter.appGuide }
 
-    open let appGuideSuperview: NSView
+    public let appGuideSuperview: NSView
 
     /// Indicates if invoking "next" via keyboard will automatically finish the
     /// sequence if it's at the end. Defaults to `false`.

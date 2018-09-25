@@ -6,7 +6,7 @@ open class OverlayViewController: NSViewController {
 
     open weak var eventHandler: HandlesOverlayEvents?
 
-    open var overlayView: OverlayView! {
+    open var overlayView: OverlayView {
         get { return self.view as! OverlayView }
         set { self.view = newValue }
     }
