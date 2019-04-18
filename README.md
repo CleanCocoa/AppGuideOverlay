@@ -1,6 +1,6 @@
 # AppGuideOverlay
 
-![Swift 4.2](https://img.shields.io/badge/Swift-4.2-blue.svg?style=flat)
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-blue.svg?style=flat)
 ![Version](https://img.shields.io/github/tag/CleanCocoa/AppGuideOverlay.svg?style=flat)
 ![License](https://img.shields.io/github/license/CleanCocoa/AppGuideOverlay.svg?style=flat)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
@@ -59,6 +59,6 @@ appGuideOverlay.start()
 
 ## Code License
 
-Copyright (c) 2018 Christian Tietze. Distributed under the MIT License.
+Copyright (c) 2018-2019 Christian Tietze. Distributed under the MIT License.
 
 - Uses [LoopingAnimation](https://github.com/CleanCocoa/LoopingAnimation) code directly, also distributed under the MIT License.
