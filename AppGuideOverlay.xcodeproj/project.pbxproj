@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500F2B2823D30492002B7BD1 /* OverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F2B2723D30492002B7BD1 /* OverlayButton.swift */; };
 		500F5BC9201CBCA700B78822 /* AppGuideOverlay.h in Headers */ = {isa = PBXBuildFile; fileRef = 500F5BC7201CBCA700B78822 /* AppGuideOverlay.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		500F5BDA201CBD7A00B78822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F5BD9201CBD7A00B78822 /* AppDelegate.swift */; };
 		500F5BDC201CBD7A00B78822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500F5BDB201CBD7A00B78822 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		500F2B2723D30492002B7BD1 /* OverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayButton.swift; sourceTree = "<group>"; };
 		500F5BC4201CBCA700B78822 /* AppGuideOverlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppGuideOverlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500F5BC7201CBCA700B78822 /* AppGuideOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppGuideOverlay.h; sourceTree = "<group>"; };
 		500F5BC8201CBCA700B78822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				500F5BED201DD18C00B78822 /* OverlayView.swift */,
 				500F5BEF201DD1A900B78822 /* OverlayLabelViewController.swift */,
 				500F5BF1201DD1BE00B78822 /* OverlayLabelView.swift */,
+				500F2B2723D30492002B7BD1 /* OverlayButton.swift */,
 				507CF1952025DD0B0048F133 /* OverlayButtonLabels.swift */,
 				500F5BF5201DD27A00B78822 /* NSView+constraints.swift */,
 				500F5BF7201DD2A700B78822 /* NSTextField+Label.swift */,
@@ -315,6 +318,7 @@
 				500F5BE8201CBE2200B78822 /* AppGuide.swift in Sources */,
 				500F5BEA201CBF3400B78822 /* AppGuidePresenter.swift in Sources */,
 				50F54CC12025C0EF00C419E4 /* AppGuideOverlay.swift in Sources */,
+				500F2B2823D30492002B7BD1 /* OverlayButton.swift in Sources */,
 				500F5C01201DD3B500B78822 /* AnimationLoop.swift in Sources */,
 				500F5BF8201DD2A700B78822 /* NSTextField+Label.swift in Sources */,
 				507CF198202632D80048F133 /* DisplaysAppGuide.swift in Sources */,

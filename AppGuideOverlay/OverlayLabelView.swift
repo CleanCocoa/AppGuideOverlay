@@ -61,6 +61,7 @@ open class OverlayLabelView: NSView {
         let button = OverlayButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.bezelStyle = .recessed
+        button.setButtonType(.momentaryLight)
 
         direction.configure(button: button)
 
@@ -127,52 +128,5 @@ open class OverlayLabelView: NSView {
             ? self.finishAction
             : self.nextAction
         nextStepButton.changeNextImage(isLastStep: isLastStep)
-    }
-}
-
-open class OverlayButton: NSButton, OverlayPart {
-
-    public enum Action {
-        case previous, next, finish
-
-        public var imageName: NSImage.Name {
-            switch self {
-            case .previous: return "prevTemplate.pdf"
-            case .next: return "nextTemplate.pdf"
-            case .finish: return "finishTemplate.pdf"
-            }
-        }
-
-        public var image: NSImage? {
-            return Bundle(for: OverlayButton.self).image(forResource: imageName)
-        }
-
-        public var imagePosition: NSControl.ImagePosition {
-            switch self {
-            case .previous: return .imageLeft
-            case .next, .finish: return .imageRight
-            }
-        }
-
-        public var title: String {
-            switch self {
-            case .previous: return OverlayButtonLabels.previous
-            case .next: return OverlayButtonLabels.next
-            case .finish: return OverlayButtonLabels.finish
-            }
-        }
-
-        public func configure(button: NSButton) {
-            button.title = self.title
-            button.image = self.image
-            button.imagePosition = self.imagePosition
-            button.imageScaling = .scaleProportionallyDown
-            button.sizeToFit()
-        }
-    }
-
-    internal func changeNextImage(isLastStep: Bool) {
-        let action: Action = isLastStep ? .finish : .next
-        self.image = action.image
     }
 }
