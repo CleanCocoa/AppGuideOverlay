@@ -36,7 +36,7 @@ open class OverlayButton: DarkButton, OverlayPart {
 
         public func configure(button: OverlayButton) {
             button.title = self.title
-            button.templateImage = self.image
+            button.image = self.image
             button.imagePosition = self.imagePosition
             button.imageScaling = .scaleProportionallyDown
             button.sizeToFit()
@@ -45,7 +45,7 @@ open class OverlayButton: DarkButton, OverlayPart {
 
     internal func changeNextImage(isLastStep: Bool) {
         let action: Action = isLastStep ? .finish : .next
-        self.templateImage = action.image
+        self.image = action.image
     }
 }
 
