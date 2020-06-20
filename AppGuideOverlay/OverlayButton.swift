@@ -92,16 +92,24 @@ open class DarkButton: NSButton {
         }
     }
 
+    @available(OSX 10.14, *)
+    open override func viewDidChangeEffectiveAppearance() {
+        super.viewDidChangeEffectiveAppearance()
+        updateTitleColor()
+    }
+
     override open var isEnabled: Bool {
         didSet {
+            updateTitleColor()
             updateImageFromTemplate()
         }
     }
 
     private func updateImageFromTemplate() {
         guard let templateImage = self.templateImage else { return }
-        self.image = templateImage.tintedNonTemplate(color: self.isEnabled ? .white : .black)
+        self.image = templateImage.tintedNonTemplate(color: self.isEnabled ? .white : .lightGray)
     }
+
 }
 
 extension NSImage {
