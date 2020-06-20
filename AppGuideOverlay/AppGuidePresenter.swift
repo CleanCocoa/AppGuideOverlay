@@ -49,7 +49,9 @@ public class AppGuidePresenter: HandlesOverlayEvents {
     public func displayStep() {
         precondition(appGuide.steps.indices.contains(stepIndex))
         let viewModel = currentAppGuideStepViewModel()
-        view.display(appGuideStep: viewModel)
+        DispatchQueue.main.async {
+            self.view.display(appGuideStep: viewModel)
+        }
     }
 
     private func currentAppGuideStepViewModel() -> AppGuideStepViewModel {
