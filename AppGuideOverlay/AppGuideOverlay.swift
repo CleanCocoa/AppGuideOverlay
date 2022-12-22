@@ -2,7 +2,7 @@
 
 import AppKit
 
-public protocol AppGuideOverlayDelegate: class {
+public protocol AppGuideOverlayDelegate: AnyObject {
     /// Use to prepare your user interface to display all necessary elements.
     func appGuideWillAppear()
 
@@ -13,7 +13,7 @@ public protocol AppGuideOverlayDelegate: class {
     func appGuideDidFinish()
 }
 
-public protocol HandlesOverlayEvents: class {
+public protocol HandlesOverlayEvents: AnyObject {
     func nextStep()
     func previousStep()
     func finish()
@@ -84,7 +84,7 @@ open class AppGuideOverlay {
 
 extension AppGuideOverlay: HandlesOverlayEvents {
 
-    open func start() {
+    public func start() {
         delegate?.appGuideWillAppear()
 
         installAppGuideIntoSuperview()
@@ -92,7 +92,7 @@ extension AppGuideOverlay: HandlesOverlayEvents {
         appGuidePresenter.start()
     }
 
-    open func nextStep() {
+    public func nextStep() {
         if  isFinishingAfterNext,
             !appGuidePresenter.hasNextStep {
             finish()
@@ -102,16 +102,16 @@ extension AppGuideOverlay: HandlesOverlayEvents {
         appGuidePresenter.nextStep()
     }
 
-    open func previousStep() {
+    public func previousStep() {
         appGuidePresenter.previousStep()
     }
 
-    open func cancel() {
+    public func cancel() {
         stop()
         delegate?.appGuideDidCancel()
     }
 
-    open func finish() {
+    public func finish() {
         stop()
         delegate?.appGuideDidFinish()
     }
