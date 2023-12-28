@@ -95,7 +95,7 @@ open class OverlayView: NSView, OverlayPart {
         guard let context = NSGraphicsContext.current else { return }
 
         overlayColor.setFill()
-        dirtyRect.fill()
+        bounds.fill()
 
         context.cgContext.setBlendMode(.destinationOut)
         NSColor.black.setFill() // 100% opacity for cutout
